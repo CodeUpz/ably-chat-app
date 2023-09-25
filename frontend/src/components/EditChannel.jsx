@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Ably from 'ably/promises';
 
-import { UserList } from './UserList';
+import  UserList  from './UserList';
 import { CloseCreateChannel } from '../assets';
 
 const ChannelNameInput = ({ channelName = '', setChannelName }) => {

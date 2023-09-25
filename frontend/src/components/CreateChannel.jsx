@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Ably from 'ably';
-import  UserList  from './Userlist';
+import  UserList  from './UserList';
 import { CloseCreateChannel } from '../assets';
 
 const ably = new Ably.Realtime({ key: 'api key' }); // Replace with your Ably API key
