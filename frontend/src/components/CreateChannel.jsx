@@ -3,7 +3,7 @@ import Ably from 'ably';
 import  UserList  from './Userlist';
 import { CloseCreateChannel } from '../assets';
 
-const ably = new Ably.Realtime({ key: 'wuxaZA.MFV_ZA:REnbQREr1nRH8xBTWA6Uh5itb7fd1eIRw2Aai5TbGjg' }); // Replace with your Ably API key
+const ably = new Ably.Realtime({ key: 'api key' }); // Replace with your Ably API key
 
 const ChannelNameInput = ({ channelName = '', setChannelName }) => {
   const handleChange = (event) => {
