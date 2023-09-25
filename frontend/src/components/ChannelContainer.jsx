@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Ably from 'ably';
+import CreateChannel from './CreateChannel'; // Import the CreateChannel component
+import EditChannel from './EditChannel'; // Import the EditChannel component
 
 const ably = new Ably.Realtime({ key: 'YOUR_ABLY_API_KEY' }); // Replace with your Ably API key
 

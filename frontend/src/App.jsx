@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Realtime } from 'ably/browser/static/ably-commonjs.js'; // Import Ably library
+import { Realtime } from 'ably';
 
-import { ChannelListContainer, ChannelContainer, Auth } from './components';
+//import { ChannelListContainer, ChannelContainer, Auth } from './components';
+
+import ChannelListContainer from './components/ChannelListContainer';
+import ChannelContainer from './components/ChannelContainer';
+
 
 import './App.css';
 
-const apiKey = 'YOUR_ABLY_API_KEY'; // Replace with your Ably API key
-const clientId = 'YOUR_CLIENT_ID'; // Replace with a unique client ID
+// Function to generate a unique client ID
+function generateUniqueClientId() {
+  const timestamp = Date.now(); // Get the current timestamp
+  const random = Math.floor(Math.random() * 10000); // Generate a random number between 0 and 9999
+  return `client-${timestamp}-${random}`;
+}
+
+const apiKey = 'wuxaZA.MFV_ZA:REnbQREr1nRH8xBTWA6Uh5itb7fd1eIRw2Aai5TbGjg'; // Replace with your Ably API key
+const clientId = generateUniqueClientId(); // Generate a unique client ID
 
 const ably = new Realtime({
   key: apiKey,
@@ -27,7 +38,7 @@ const App = () => {
     ably.connection.connect();
     
     return () => {
-      // Disconnect and release resources when component unmounts
+      // Disconnect and release resources when the component unmounts
       ably.connection.close();
       channel.detach();
     };
