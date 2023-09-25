@@ -16,7 +16,7 @@ function generateUniqueClientId() {
   return `client-${timestamp}-${random}`;
 }
 
-const apiKey = 'wuxaZA.MFV_ZA:REnbQREr1nRH8xBTWA6Uh5itb7fd1eIRw2Aai5TbGjg'; // Replace with your Ably API key
+const apiKey = 'api key'; // Replace with your Ably API key
 const clientId = generateUniqueClientId(); // Generate a unique client ID
 
 const ably = new Realtime({
