@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAblyContext } from './AblyContext'; // Import Ably context hook
+// import { useAblyContext } from './AblyContext'; // Import Ably context hook
 
 const TeamChannelPreview = ({
   setActiveChannel,
@@ -9,7 +9,7 @@ const TeamChannelPreview = ({
   channel,
   type,
 }) => {
-  const { ably } = useAblyContext(); // Access Ably context
+  // const { ably } = useAblyContext(); // Access Ably context
 
   const ChannelPreview = () => (
     <p className="channel-preview__item">
@@ -19,7 +19,7 @@ const TeamChannelPreview = ({
 
   const DirectPreview = () => {
     const members = Object.values(channel.state.members).filter(
-      ({ user }) => user.id !== ably.auth.clientId // Use Ably's client ID
+      // ({ user }) => user.id !== ably.auth.clientId // Use Ably's client ID
     );
 
     console.log(members[0]);
@@ -34,11 +34,11 @@ const TeamChannelPreview = ({
 
   return (
     <div
-      className={
-        channel?.id === ably.activeChannel?.id // Use Ably's activeChannel
-          ? 'channel-preview__wrapper__selected'
-          : 'channel-preview__wrapper'
-      }
+      // className={
+      //   channel?.id === ably.activeChannel?.id // Use Ably's activeChannel
+      //     ? 'channel-preview__wrapper__selected'
+      //     : 'channel-preview__wrapper'
+      // }
       onClick={() => {
         setIsCreating(false);
         setIsEditing(false);
