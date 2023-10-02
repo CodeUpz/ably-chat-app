@@ -2,6 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
+Cache
+*.pyc
 
 # C extensions
 *.so
@@ -26,7 +28,6 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-LLaMA/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -57,10 +58,7 @@ coverage.xml
 *.pot
 
 # Django stuff:
-*.log
 local_settings.py
-db.sqlite3
-db.sqlite3-journal
 
 # Flask stuff:
 instance/
