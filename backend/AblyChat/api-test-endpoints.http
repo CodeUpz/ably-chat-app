@@ -1,0 +1,39 @@
+POST http://127.0.0.1:8000/api/register/ HTTP/1.1
+content-type: application/json
+
+{
+    "first_name": "Amin",
+    "last_name": "Zayer",
+    "username": "aminzayer",
+    "email": "amin.zayer@email.xyz",
+    "password": "12345Amin",
+    "password2": "12345Amin"
+}
+
+POST http://127.0.0.1:8000/api/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "aminzayer",
+    "password": "12345Amin"
+}
+
+POST http://127.0.0.1:8000/api/logout/ HTTP/1.1
+Authorization: Token a727b6c1b956bb47e0d6f1c498ae0035e909fd91
+content-type: application/json
+
+POST http://127.0.0.1:8000/api/getuserinfo/ HTTP/1.1
+Authorization: Token d40132a7e75fa2868b3b12e6d66d1bf56e0f38ff
+content-type: application/json
+
+POST http://127.0.0.1:8000/api/profileupdate/ HTTP/1.1
+Authorization: Token d40132a7e75fa2868b3b12e6d66d1bf56e0f38ff
+content-type: application/json
+
+{
+    "first_name": "Amin",
+    "last_name": "Zayer",
+    "username": "aminzayer",
+    "email": "amin.zayer@email.xyz",
+    "password": "12345Amin"
+}
