@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Avatar } from 'your-ably-chat-react-package'; // Replace with the actual Ably chat package
+import { Avatar } from '@ably-labs/react-hooks'; // Replace with the actual Ably chat package
 import { InviteIcon } from '../assets';
 
 const ListContainer = ({ children }) => {
