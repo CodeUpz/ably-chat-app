@@ -21,7 +21,7 @@ const ChannelNameInput = ({ channelName = '', setChannelName }) => {
 }
 
 const EditChannel = ({ setIsEditing }) => {
-    const ably = new Ably.Realtime({ key: 'xBlqZQ.fUAXDQ:dP3IJ_VesYlAoBFcS_KnuE_L1MLACfeYIiNl18gHzTQ' }); // Replace with your Ably API key
+    const ably = new Ably.Realtime({ key: 'api key' }); // Replace with your Ably API key
     const channel = ably.channels.get('YOUR_CHANNEL_NAME'); // Replace with your channel name
     const [channelName, setChannelName] = useState('');
 

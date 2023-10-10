@@ -8,7 +8,7 @@ import TeamChannelPreview  from './TeamChannelPreview';
 
 
 const ably = new Realtime({
-  key: 'xBlqZQ.fUAXDQ:dP3IJ_VesYlAoBFcS_KnuE_L1MLACfeYIiNl18gHzTQ', // Replace with your Ably API key
+  key: 'api key', // Replace with your Ably API key
 });
 
 const SideBar = ({ logout }) => (
