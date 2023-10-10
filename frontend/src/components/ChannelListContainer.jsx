@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Realtime } from 'ably';
-import HospitalIcon from '../assets/hospital.png';
-import LogoutIcon from '../assets/logout.png';
+import HospitalIcon from './hospital.png';
+import LogoutIcon from './logout.png';
 import ChannelSearch  from './ChannelSearch'; // Import your components
-import TeamChannelList from './TeamChannelList';
-import TeamChannelPreview from './TeamChannelPreview';
+import TeamChannelList from './TeamChannelList'; 
+import TeamChannelPreview  from './TeamChannelPreview'; 
+
 
 const ably = new Realtime({
-  key: 'api key', // Replace with your Ably API key
+  key: 'xBlqZQ.fUAXDQ:dP3IJ_VesYlAoBFcS_KnuE_L1MLACfeYIiNl18gHzTQ', // Replace with your Ably API key
 });
-
 
 const SideBar = ({ logout }) => (
   <div className="channel-list__sidebar">
@@ -117,3 +117,9 @@ const ChannelListContainer = ({ setCreateType, setIsCreating, setIsEditing }) =>
 };
 
 export default ChannelListContainer;
+
+
+
+
+
+

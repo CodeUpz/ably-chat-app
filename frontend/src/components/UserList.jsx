@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Avatar } from '@ably-labs/react-hooks'; // Replace with the actual Ably chat package
+
+
+//import { Avatar } from '@ably-labs/react-hooks'; // Replace with the actual Ably chat package
+
 import { InviteIcon } from '../assets';
 
 const ListContainer = ({ children }) => {
@@ -30,7 +33,7 @@ const UserItem = ({ user, setSelectedUsers }) => {
     return (
         <div className="user-item__wrapper" onClick={handleSelect}>
             <div className="user-item__name-wrapper">
-                <Avatar image={user.image} name={user.fullName || user.id} size={32} />
+                <img src={user.image} alt={user.fullName || user.id} className="user-item__avatar" />
                 <p className="user-item__name">{user.fullName || user.id}</p>
             </div>
             {selected ? <InviteIcon /> : <div className="user-item__invite-empty" />}

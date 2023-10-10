@@ -1,50 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import { Realtime } from 'ably';
-
-//import { ChannelListContainer, ChannelContainer, Auth } from './components';
+import { configureAbly } from "@ably-labs/react-hooks";
+import Cookies from 'universal-cookie';
 
 import ChannelListContainer from './components/ChannelListContainer';
 import ChannelContainer from './components/ChannelContainer';
-
+import Auth from './components/Auth';
 
 import './App.css';
 
-// Function to generate a unique client ID
-function generateUniqueClientId() {
-  const timestamp = Date.now(); // Get the current timestamp
-  const random = Math.floor(Math.random() * 10000); // Generate a random number between 0 and 9999
-  return `client-${timestamp}-${random}`;
-}
+const cookies = new Cookies();
 
-const apiKey = 'api key'; // Replace with your Ably API key
-const clientId = generateUniqueClientId(); // Generate a unique client ID
+const apiKey = 'YOUR_ABLY_API_KEY'; // Replace with your Ably API key
+const authToken = cookies.get('token');
 
-const ably = new Realtime({
-  key: apiKey,
-  clientId: clientId,
-});
+configureAbly(apiKey); // Configure Ably with your API key
 
 const App = () => {
   const [createType, setCreateType] = useState('');
   const [isCreating, setIsCreating] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
-  const [channel, setChannel] = useState(null);
 
   useEffect(() => {
-    const channel = ably.channels.get('your_channel_name'); // Replace with your channel name
-    setChannel(channel);
+    // Connect to Ably using the auth token
+    if (authToken) {
+      // You should use the Ably client instance from configureAbly here
+      const ably = configureAbly(apiKey);
+      ably.connectUser({
+        id: cookies.get('userId'),
+        name: cookies.get('username'),
+        fullName: cookies.get('fullName'),
+        image: cookies.get('avatarURL'),
+        hashedPassword: cookies.get('hashedPassword'),
+        phoneNumber: cookies.get('phoneNumber'),
+      });
+    }
+  }, [authToken]);
 
-    // Connect to Ably with the clientId
-    ably.connection.connect();
-    
-    return () => {
-      // Disconnect and release resources when the component unmounts
-      ably.connection.close();
-      channel.detach();
-    };
-  }, []);
-
-  if (!channel) return <div>Loading...</div>; // Add loading indicator or error handling
+  if (!authToken) return <Auth />;
 
   return (
     <div className="app__wrapper">
@@ -53,7 +45,6 @@ const App = () => {
         setIsCreating={setIsCreating}
         setCreateType={setCreateType}
         setIsEditing={setIsEditing}
-        channel={channel} // Pass the Ably channel to your components
       />
       <ChannelContainer
         isCreating={isCreating}
@@ -61,10 +52,9 @@ const App = () => {
         isEditing={isEditing}
         setIsEditing={setIsEditing}
         createType={createType}
-        channel={channel} // Pass the Ably channel to your components
       />
     </div>
   );
-}
+};
 
 export default App;
