@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Ably from 'ably/promises';
+import Ably from 'ably';
 
 import  UserList  from './UserList';
 import { CloseCreateChannel } from '../assets';

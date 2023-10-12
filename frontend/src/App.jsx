@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { configureAbly } from "@ably-labs/react-hooks";
 import Cookies from 'universal-cookie';
 
+
 import ChannelListContainer from './components/ChannelListContainer';
 import ChannelContainer from './components/ChannelContainer';
 import Auth from './components/Auth';
@@ -10,7 +11,7 @@ import './App.css';
 
 const cookies = new Cookies();
 
-const apiKey = 'YOUR_ABLY_API_KEY'; // Replace with your Ably API key
+const apiKey = 'wuxaZA.MFV_ZA:REnbQREr1nRH8xBTWA6Uh5itb7fd1eIRw2Aai5TbGjg'; // Replace with your Ably API key
 const authToken = cookies.get('token');
 
 configureAbly(apiKey); // Configure Ably with your API key

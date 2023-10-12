@@ -4,7 +4,7 @@ import { ResultsDropdown } from './ResultsDropdown';
 import { SearchIcon } from '../assets';
 
 const ChannelSearch = ({ setToggleContainer }) => {
-  const [ablyInstance, ablyStatus] = configureAbly({ key: 'YOUR_ABLY_API_KEY' }); // Rename 'ably' to 'ablyInstance'
+  const [ablyInstance, ablyStatus] = configureAbly({ key: 'wuxaZA.MFV_ZA:REnbQREr1nRH8xBTWA6Uh5itb7fd1eIRw2Aai5TbGjg' }); // Rename 'ably' to 'ablyInstance'
 
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
