@@ -3,7 +3,7 @@ import Ably from 'ably';
 import CreateChannel from './CreateChannel'; // Import the CreateChannel component
 import EditChannel from './EditChannel'; // Import the EditChannel component
 
-const ably = new Ably.Realtime({ key: 'wuxaZA.MFV_ZA:REnbQREr1nRH8xBTWA6Uh5itb7fd1eIRw2Aai5TbGjg' }); // Replace with your Ably API key
+const ably = new Ably.Realtime({ key: 'api key' }); // Replace with your Ably API key
 
 const ChannelContainer = ({ createType }) => {
   const [isCreating, setIsCreating] = useState(false);

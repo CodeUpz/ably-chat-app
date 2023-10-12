@@ -11,7 +11,7 @@ import './App.css';
 
 const cookies = new Cookies();
 
-const apiKey = 'wuxaZA.MFV_ZA:REnbQREr1nRH8xBTWA6Uh5itb7fd1eIRw2Aai5TbGjg'; // Replace with your Ably API key
+const apiKey = 'api key'; // Replace with your Ably API key
 const authToken = cookies.get('token');
 
 configureAbly(apiKey); // Configure Ably with your API key
