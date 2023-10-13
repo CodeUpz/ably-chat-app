@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { configureAbly, useChannel } from "@ably-labs/react-hooks";
-import { ResultsDropdown } from './ResultsDropdown';
+import ResultsDropdown from './ResultsDropdown'; // If both files are in the same directory
+
 import { SearchIcon } from '../assets';
 
 const ChannelSearch = ({ setToggleContainer }) => {
